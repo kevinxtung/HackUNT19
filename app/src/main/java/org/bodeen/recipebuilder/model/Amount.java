@@ -3,8 +3,16 @@ package org.bodeen.recipebuilder.model;
 public class Amount {
 
     private double quantity;
-    private String unit;
+    private String measureUnit;
     private double gramWeight;
+
+    public String getMeasureUnit() {
+        return measureUnit;
+    }
+
+    public void setMeasureUnit(String measureUnit) {
+        this.measureUnit = measureUnit;
+    }
 
     public double getQuantity() {
         return quantity;
@@ -12,14 +20,6 @@ public class Amount {
 
     public void setQuantity(double quantity) {
         this.quantity = quantity;
-    }
-
-    public String getUnit() {
-        return unit;
-    }
-
-    public void setUnit(String unit) {
-        this.unit = unit;
     }
 
     public double getGramWeight() {

@@ -20,7 +20,7 @@ import org.bodeen.recipebuilder.model.Amount;
                 )
         }, tableName = "ingredient_nutrient_table"
 )
-public class IngredientNutrition {
+public class IngredientNutrient {
 
     @PrimaryKey(autoGenerate = true)
     private int id;
@@ -33,4 +33,36 @@ public class IngredientNutrition {
 
     @ColumnInfo(name = "amount")
     private Amount amount;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public int getIngredientId() {
+        return ingredientId;
+    }
+
+    public void setIngredientId(int ingredientId) {
+        this.ingredientId = ingredientId;
+    }
+
+    public int getNutritientId() {
+        return nutritientId;
+    }
+
+    public void setNutritientId(int nutritientId) {
+        this.nutritientId = nutritientId;
+    }
+
+    public Amount getAmount() {
+        return amount;
+    }
+
+    public void setAmount(Amount amount) {
+        this.amount = amount;
+    }
 }

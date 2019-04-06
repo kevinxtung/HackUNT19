@@ -1,11 +1,12 @@
 package org.bodeen.recipebuilder.model;
 
+import androidx.room.Embedded;
 import org.bodeen.recipebuilder.model.entity.Nutrient;
 
 public class NutrientAmount {
 
-    private Nutrient nutrient;
-    private Amount amount;
+    @Embedded private Nutrient nutrient;
+    @Embedded private Amount amount;
 
     public Nutrient getNutrient() {
         return nutrient;

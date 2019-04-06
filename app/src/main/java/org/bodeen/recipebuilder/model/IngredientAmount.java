@@ -1,11 +1,12 @@
 package org.bodeen.recipebuilder.model;
 
+import androidx.room.Embedded;
 import org.bodeen.recipebuilder.model.entity.Ingredient;
 
 public class IngredientAmount {
 
-    private Ingredient ingredient;
-    private Amount amount;
+    @Embedded private Ingredient ingredient;
+    @Embedded private Amount amount;
 
     public Ingredient getIngredient() {
         return ingredient;

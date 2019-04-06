@@ -33,4 +33,36 @@ public class RecipeIngredient {
 
     @ColumnInfo(name = "amount")
     private Amount amount;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public int getRecipeId() {
+        return recipeId;
+    }
+
+    public void setRecipeId(int recipeId) {
+        this.recipeId = recipeId;
+    }
+
+    public int getIngredientId() {
+        return ingredientId;
+    }
+
+    public void setIngredientId(int ingredientId) {
+        this.ingredientId = ingredientId;
+    }
+
+    public Amount getAmount() {
+        return amount;
+    }
+
+    public void setAmount(Amount amount) {
+        this.amount = amount;
+    }
 }
