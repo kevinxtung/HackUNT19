@@ -3,8 +3,8 @@ package org.bodeen.recipebuilder.model;
 import java.util.List;
 
 public class Ingredient {
-    private int id;                     // Primary Key. Corresponds to ndbno field in USDA database.
-    private String name;                // Common name of an ingredient. (i.e. eggplant)
+    private int ingredientId;           // Primary Key. Corresponds to ndbno field in USDA database.
+    private String name;                // Common name of an ingredient, from USDA database. (i.e. eggplant)
     private List<String> altNames;      // Other names of an ingredient. (i.e. aubergine)
     private String description;         // Description of an ingredient.
 
@@ -19,12 +19,12 @@ public class Ingredient {
     private double carbFactor;      // Usually 4
 
     // Boilerplate getters and setters.
-    public int getId() {
-        return id;
+    public int getIngredientId() {
+        return ingredientId;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setIngredientId(int ingredientId) {
+        this.ingredientId = ingredientId;
     }
 
     public String getName() {

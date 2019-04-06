@@ -1,44 +1,26 @@
 package org.bodeen.recipebuilder.model;
 
-import java.util.LinkedHashMap;
+import java.util.Date;
 import java.util.List;
 
 public class Recipe {
-    private int id;                 // Primary key.
+    private int recipeId;           // Primary key.
     private String name;            // Name of the recipe.
     private String description;     // Textual description of recipe.
     private int servings;           // Number of servings the recipe produces.
     private int cookingTime;        // Measured in minutes.
-    private String creationDate;    // Date recipe was created.
+    private Date creationDate;      // Date recipe was created.
 
-    private LinkedHashMap<Ingredient, String> ingredientAmountMap;    // Maps ingredient to string description of amount.
+    private List<String> ingredients;   // Maps ingredient to string description of amount.
     private List<String> directions;    // List of directions for a recipe.
 
-    public double getCaloriesByWeight(double gramWeight) {
-        double calorieTotal = 0.0;
-        return calorieTotal;
-    }
-
-    public double getCaloriesFromProtein() {
-        return 0.0;
-    }
-
-    public double getCaloriesFromFat() {
-        return 0.0;
-    }
-
-    public double getCaloriesFromCarbs() {
-        // Soluble fibers do contribute, insoluble do not
-        return 0.0;
-    }
-
     // Boilerplate getters and setters.
-    public int getId() {
-        return id;
+    public int getRecipeId() {
+        return recipeId;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setRecipeId(int recipeId) {
+        this.recipeId = recipeId;
     }
 
     public String getName() {
@@ -73,20 +55,20 @@ public class Recipe {
         this.cookingTime = cookingTime;
     }
 
-    public String getCreationDate() {
+    public Date getCreationDate() {
         return creationDate;
     }
 
-    public void setCreationDate(String creationDate) {
+    public void setCreationDate(Date creationDate) {
         this.creationDate = creationDate;
     }
 
-    public LinkedHashMap<Ingredient, String> getIngredientAmountMap() {
-        return ingredientAmountMap;
+    public List<String> getIngredients() {
+        return ingredients;
     }
 
-    public void setIngredientAmountMap(LinkedHashMap<Ingredient, String> ingredientAmountMap) {
-        this.ingredientAmountMap = ingredientAmountMap;
+    public void setIngredients(List<String> ingredients) {
+        this.ingredients = ingredients;
     }
 
     public List<String> getDirections() {
