@@ -6,7 +6,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 import androidx.recyclerview.widget.RecyclerView;
 import org.bodeen.recipebuilder.R;
-import org.bodeen.recipebuilder.model.entity.Recipe;
+import org.bodeen.recipebuilder.db.model.entity.Recipe;
 
 import java.util.List;
 

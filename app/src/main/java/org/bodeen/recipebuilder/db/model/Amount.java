@@ -1,4 +1,4 @@
-package org.bodeen.recipebuilder.model;
+package org.bodeen.recipebuilder.db.model;
 
 public class Amount {
 

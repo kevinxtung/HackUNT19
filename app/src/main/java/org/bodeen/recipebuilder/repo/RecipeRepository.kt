@@ -3,7 +3,7 @@ package org.bodeen.recipebuilder.repo
 import androidx.annotation.WorkerThread
 import androidx.lifecycle.LiveData
 import org.bodeen.recipebuilder.db.dao.RecipeDao
-import org.bodeen.recipebuilder.model.entity.Recipe
+import org.bodeen.recipebuilder.db.model.entity.Recipe
 
 class RecipeRepository(private val recipeDao: RecipeDao) {
 

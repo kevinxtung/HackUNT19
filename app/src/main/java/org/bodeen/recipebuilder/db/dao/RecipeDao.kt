@@ -4,9 +4,9 @@ import androidx.lifecycle.LiveData
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.Query
-import org.bodeen.recipebuilder.model.IngredientAmount
-import org.bodeen.recipebuilder.model.NutrientAmount
-import org.bodeen.recipebuilder.model.entity.Recipe
+import org.bodeen.recipebuilder.db.model.IngredientAmount
+import org.bodeen.recipebuilder.db.model.NutrientAmount
+import org.bodeen.recipebuilder.db.model.entity.Recipe
 
 @Dao
 interface RecipeDao {
