@@ -4,16 +4,15 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
-import org.bodeen.recipebuilder.db.dao.IngredientDao
-import org.bodeen.recipebuilder.db.dao.NutrientDao
 import org.bodeen.recipebuilder.db.dao.RecipeDao
+import org.bodeen.recipebuilder.model.Ingredient
+import org.bodeen.recipebuilder.model.Nutrient
+import org.bodeen.recipebuilder.model.Recipe
 
 @Database(entities = [Recipe::class, Ingredient::class, Nutrient::class], version = 1)
 abstract class RecipeDatabase : RoomDatabase() {
 
     abstract fun recipeDao(): RecipeDao
-    abstract fun ingredientDao(): IngredientDao
-    abstract fun nutrientDao(): NutrientDao
 
     companion object {
 
