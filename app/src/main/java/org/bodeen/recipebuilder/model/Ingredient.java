@@ -1,8 +1,11 @@
 package org.bodeen.recipebuilder.model;
 
+import java.util.List;
+
 public class Ingredient {
     private int id;                     // Primary Key. Corresponds to ndbno field in USDA database.
-    private String name;                // Common name of an ingredient.
+    private String name;                // Common name of an ingredient. (i.e. eggplant)
+    private List<String> altNames;      // Other names of an ingredient. (i.e. aubergine)
     private String description;         // Description of an ingredient.
 
     private double refusePercentage;    // Percentage of refuse weight in ingredient.
@@ -29,6 +32,14 @@ public class Ingredient {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public List<String> getAltNames() {
+        return altNames;
+    }
+
+    public void setAltNames(List<String> altNames) {
+        this.altNames = altNames;
     }
 
     public String getDescription() {
