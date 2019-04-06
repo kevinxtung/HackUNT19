@@ -14,6 +14,24 @@ public class Recipe {
     private LinkedHashMap<Ingredient, String> ingredientAmountMap;    // Maps ingredient to string description of amount.
     private List<String> directions;    // List of directions for a recipe.
 
+    public double getCaloriesByWeight(double gramWeight) {
+        double calorieTotal = 0.0;
+        return calorieTotal;
+    }
+
+    public double getCaloriesFromProtein() {
+        return 0.0;
+    }
+
+    public double getCaloriesFromFat() {
+        return 0.0;
+    }
+
+    public double getCaloriesFromCarbs() {
+        // Soluble fibers do contribute, insoluble do not
+        return 0.0;
+    }
+
     // Boilerplate getters and setters.
     public int getId() {
         return id;
