@@ -1,6 +1,6 @@
-package org.bodeen.recipebuilder.model;
+package org.bodeen.recipebuilder.db.model;
 
-import org.bodeen.recipebuilder.model.entity.Nutrient;
+import org.bodeen.recipebuilder.db.model.entity.Nutrient;
 
 public class NutrientAmount {
 

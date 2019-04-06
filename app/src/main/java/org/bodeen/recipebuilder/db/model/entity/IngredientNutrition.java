@@ -1,10 +1,10 @@
-package org.bodeen.recipebuilder.model.entity;
+package org.bodeen.recipebuilder.db.model.entity;
 
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.ForeignKey;
 import androidx.room.PrimaryKey;
-import org.bodeen.recipebuilder.model.Amount;
+import org.bodeen.recipebuilder.db.model.Amount;
 
 @Entity(
         foreignKeys = {

@@ -1,4 +1,4 @@
-package org.bodeen.recipebuilder.model.entity;
+package org.bodeen.recipebuilder.db.model.entity;
 
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;

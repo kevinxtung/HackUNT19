@@ -5,9 +5,9 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 import org.bodeen.recipebuilder.db.dao.RecipeDao
-import org.bodeen.recipebuilder.model.entity.Ingredient
-import org.bodeen.recipebuilder.model.entity.Nutrient
-import org.bodeen.recipebuilder.model.entity.Recipe
+import org.bodeen.recipebuilder.db.model.entity.Ingredient
+import org.bodeen.recipebuilder.db.model.entity.Nutrient
+import org.bodeen.recipebuilder.db.model.entity.Recipe
 
 @Database(entities = [Recipe::class, Ingredient::class, Nutrient::class], version = 1)
 abstract class RecipeDatabase : RoomDatabase() {
