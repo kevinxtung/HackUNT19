@@ -1,18 +1,18 @@
-package org.bodeen.recipebuilder.model;
+package org.bodeen.recipebuilder.model.entity;
 
 public class Nutrient {
-    private int id;         // Primary Key
+    private int nutrientId;         // Primary Key
     private String unit;    // Unit of measure (mg, g, micrograms, etc)
     private String name;    // Common Name of Nutrient
     private int round;      // Number of decimal places to round to
 
     // Boilerplate getters and setters.
-    public int getId() {
-        return id;
+    public int getNutrientId() {
+        return nutrientId;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setNutrientId(int nutrientId) {
+        this.nutrientId = nutrientId;
     }
 
     public String getUnit() {
