@@ -1,7 +1,7 @@
 package org.bodeen.recipebuilder.model;
 
 public class Nutrient {
-    private int nutrientId; // Primary Key
+    private int nutrientId;         // Primary Key
     private String unit;    // Unit of measure (mg, g, micrograms, etc)
     private String name;    // Common Name of Nutrient
     private int round;      // Number of decimal places to round to
