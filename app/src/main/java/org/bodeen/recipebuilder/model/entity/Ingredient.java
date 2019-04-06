@@ -1,4 +1,4 @@
-package org.bodeen.recipebuilder.model;
+package org.bodeen.recipebuilder.model.entity;
 
 import java.util.List;
 
