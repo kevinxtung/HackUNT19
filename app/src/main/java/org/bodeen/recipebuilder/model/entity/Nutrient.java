@@ -1,4 +1,4 @@
-package org.bodeen.recipebuilder.model;
+package org.bodeen.recipebuilder.model.entity;
 
 public class Nutrient {
     private int nutrientId;         // Primary Key
