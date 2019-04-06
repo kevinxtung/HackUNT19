@@ -1,17 +1,38 @@
 package org.bodeen.recipebuilder.model.entity;
 
+import androidx.room.ColumnInfo;
+import androidx.room.Entity;
+import androidx.room.PrimaryKey;
+
 import java.util.Date;
 import java.util.List;
 
+@Entity(tableName = "recipe_table")
 public class Recipe {
+
+    @PrimaryKey
+    @ColumnInfo(name = "recipe_id")
     private int recipeId;           // Primary key.
+
+    @ColumnInfo(name = "name")
     private String name;            // Name of the recipe.
+
+    @ColumnInfo(name = "description")
     private String description;     // Textual description of recipe.
+
+    @ColumnInfo(name = "servings")
     private int servings;           // Number of servings the recipe produces.
+
+    @ColumnInfo(name = "cooking_time")
     private int cookingTime;        // Measured in minutes.
+
+    @ColumnInfo(name = "creation_date")
     private Date creationDate;      // Date recipe was created.
 
+    @ColumnInfo(name = "ingredients")
     private List<String> ingredients;   // Maps ingredient to string description of amount.
+
+    @ColumnInfo(name = "directions")
     private List<String> directions;    // List of directions for a recipe.
 
     // Boilerplate getters and setters.

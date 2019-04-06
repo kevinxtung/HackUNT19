@@ -1,9 +1,23 @@
 package org.bodeen.recipebuilder.model.entity;
 
+import androidx.room.ColumnInfo;
+import androidx.room.Entity;
+import androidx.room.PrimaryKey;
+
+@Entity(tableName = "nutrient_table")
 public class Nutrient {
+
+    @PrimaryKey
+    @ColumnInfo(name = "nutrient_id")
     private int nutrientId;         // Primary Key
+
+    @ColumnInfo(name = "unit")
     private String unit;    // Unit of measure (mg, g, micrograms, etc)
+
+    @ColumnInfo(name = "name")
     private String name;    // Common Name of Nutrient
+
+    @ColumnInfo(name = "round")
     private int round;      // Number of decimal places to round to
 
     // Boilerplate getters and setters.
