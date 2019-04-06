@@ -29,7 +29,7 @@ class Converters {
         return Gson().toJson(list)
     }
 
-    @TypeConverter
+    /*@TypeConverter
     fun stringToAmount(value: String?): Amount? {
         return if (value == null) null else {
             val items = value.split("|")
@@ -48,5 +48,5 @@ class Converters {
         return if (amount == null) null else {
             amount.quantity.toString() + "|" + amount.measureUnit + "|" + amount.gramWeight.toString()
         }
-    }
+    }*/
 }

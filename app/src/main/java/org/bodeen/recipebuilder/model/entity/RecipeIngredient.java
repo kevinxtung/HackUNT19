@@ -1,9 +1,6 @@
 package org.bodeen.recipebuilder.model.entity;
 
-import androidx.room.ColumnInfo;
-import androidx.room.Entity;
-import androidx.room.ForeignKey;
-import androidx.room.PrimaryKey;
+import androidx.room.*;
 import org.bodeen.recipebuilder.model.Amount;
 
 @Entity(
@@ -31,7 +28,7 @@ public class RecipeIngredient {
     @ColumnInfo(name = "ingredient_id")
     private int ingredientId;
 
-    @ColumnInfo(name = "amount")
+    @Embedded
     private Amount amount;
 
     public int getId() {
