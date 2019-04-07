@@ -4,7 +4,7 @@ import com.google.gson.annotations.SerializedName;
 
 import java.util.List;
 
-public class Nutrient {
+public class FRNutrient {
 
     @SerializedName("nutrient_id")
 
