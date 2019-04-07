@@ -29,7 +29,7 @@ public class IngredientNutrient {
 
     @ColumnInfo(name = "nutrient_id")
     @NonNull
-    private String nutritientId;
+    private int nutritientId;
 
     @Embedded
     private Amount amount;
@@ -42,11 +42,11 @@ public class IngredientNutrient {
         this.ingredientId = ingredientId;
     }
 
-    public String getNutritientId() {
+    public int getNutritientId() {
         return nutritientId;
     }
 
-    public void setNutritientId(String nutritientId) {
+    public void setNutritientId(int nutritientId) {
         this.nutritientId = nutritientId;
     }
 

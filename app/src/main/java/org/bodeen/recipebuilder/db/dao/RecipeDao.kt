@@ -3,6 +3,7 @@ package org.bodeen.recipebuilder.db.dao
 import androidx.lifecycle.LiveData
 import androidx.room.Dao
 import androidx.room.Insert
+import androidx.room.OnConflictStrategy
 import androidx.room.Query
 import org.bodeen.recipebuilder.db.model.IngredientAmount
 import org.bodeen.recipebuilder.db.model.NutrientAmount
@@ -28,18 +29,18 @@ interface RecipeDao {
     )
     fun getNutrientsForIngredient(ingredientId: Int): LiveData<List<NutrientAmount>>
 
-    @Insert
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun insert(recipe: Recipe)
 
-    @Insert
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun insert(ingredient: Ingredient)
 
-    @Insert
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun insert(nutrient: Nutrient)
 
-    @Insert
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun insert(recipeIngredient: RecipeIngredient)
 
-    @Insert
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun insert(ingredientNutrient: IngredientNutrient)
 }

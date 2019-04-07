@@ -11,7 +11,7 @@ public class Nutrient {
     @PrimaryKey
     @ColumnInfo(name = "nutrient_id")
     @NonNull
-    private String nutrientId;         // Primary Key
+    private int nutrientId;         // Primary Key
 
     @ColumnInfo(name = "unit")
     private String unit;    // Unit of measure (mg, g, micrograms, etc)
@@ -23,11 +23,11 @@ public class Nutrient {
     private int round;      // Number of decimal places to round to
 
     // Boilerplate getters and setters.
-    public String getNutrientId() {
+    public int getNutrientId() {
         return nutrientId;
     }
 
-    public void setNutrientId(String nutrientId) {
+    public void setNutrientId(int nutrientId) {
         this.nutrientId = nutrientId;
     }
 

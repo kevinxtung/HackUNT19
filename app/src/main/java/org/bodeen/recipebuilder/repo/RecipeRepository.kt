@@ -23,7 +23,7 @@ class RecipeRepository(private val recipeDao: RecipeDao) {
             val call = service.retrieveIngredientReport(it.ingredient.ingredientId)
             call.enqueue(object: Callback<FoodReportJSONObject> {
                 override fun onResponse(call: Call<FoodReportJSONObject>?, response: Response<FoodReportJSONObject>?) {
-                    val ingredient = Ingredient(response.body()!!)
+                    val ingredient = Ingredient(response!!.body())
                     recipeDao.insert(ingredient)
 
                     val ri = RecipeIngredient()

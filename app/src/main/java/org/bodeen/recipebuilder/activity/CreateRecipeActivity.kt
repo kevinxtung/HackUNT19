@@ -7,6 +7,7 @@ import android.view.Menu
 import android.view.MenuItem
 import android.view.View
 import androidx.appcompat.app.AlertDialog
+import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
 import kotlinx.android.synthetic.main.activity_create_recipe.*
 import kotlinx.android.synthetic.main.dialog_ingredient_search.view.*
@@ -19,6 +20,7 @@ import org.bodeen.recipebuilder.api.model.FoodSearchResult
 import org.bodeen.recipebuilder.db.RecipeDatabase
 import org.bodeen.recipebuilder.db.model.entity.Recipe
 import org.bodeen.recipebuilder.repo.RecipeRepository
+import org.bodeen.recipebuilder.viewmodel.CreateRecipeViewModel
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -29,9 +31,13 @@ class CreateRecipeActivity : AppCompatActivity() {
     private lateinit var service: USDAService
     private lateinit var ingredientAdapter: IngredientAdapter
 
+    private lateinit var viewModel: CreateRecipeViewModel
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_create_recipe)
+
+        viewModel = ViewModelProviders.of(this).get(CreateRecipeViewModel::class.java)
 
         ingredientAdapter = IngredientAdapter(ArrayList())
         ingredientList.layoutManager = LinearLayoutManager(this)
@@ -76,24 +82,17 @@ class CreateRecipeActivity : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem?): Boolean {
         return when (item!!.itemId) {
             R.id.action_save -> {
-                saveRecipeToDB()
+                val recipe = Recipe()
+                recipe.name = nameInput.text.toString()
+                recipe.description = descInput.text.toString()
+
+                viewModel.insert(recipe, ingredientAdapter.ingredients, service)
+                setResult(Activity.RESULT_OK)
+                finish()
                 true
             }
 
             else -> super.onOptionsItemSelected(item)
         }
-    }
-
-    private fun saveRecipeToDB() {
-        val recipeDao = RecipeDatabase.getDatabase(application).recipeDao()
-        val recipeRepository = RecipeRepository(recipeDao)
-
-        val recipe = Recipe()
-        recipe.name = nameInput.text.toString()
-        recipe.description = descInput.text.toString()
-
-        recipeRepository.insert(recipe, ingredientAdapter.ingredients, service)
-        setResult(Activity.RESULT_OK)
-        finish()
     }
 }

@@ -12,6 +12,8 @@ import java.util.List;
 @Entity(tableName = "ingredient_table")
 public class Ingredient {
 
+    public Ingredient() {}
+
     public Ingredient(FoodReportJSONObject object) {
         ingredientId = object.getFoodHolders().get(0).getFood().getDesc().getNdbno();
         name = object.getFoodHolders().get(0).getFood().getDesc().getName();

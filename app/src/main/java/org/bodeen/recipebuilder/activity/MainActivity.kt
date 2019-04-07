@@ -40,7 +40,7 @@ class MainActivity : AppCompatActivity() {
         if (resultCode == Activity.RESULT_OK) {
             when (requestCode) {
                 CREATE_RECIPE_CODE -> {
-                    // Do stuff here
+                    recreate()
                 }
             }
         }
