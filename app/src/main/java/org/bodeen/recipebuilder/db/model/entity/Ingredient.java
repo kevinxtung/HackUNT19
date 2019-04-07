@@ -1,5 +1,6 @@
 package org.bodeen.recipebuilder.db.model.entity;
 
+import androidx.annotation.NonNull;
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
@@ -11,7 +12,8 @@ public class Ingredient {
 
     @PrimaryKey
     @ColumnInfo(name = "ingredient_id")
-    private int ingredientId;           // Primary Key. Corresponds to ndbno field in USDA database.
+    @NonNull
+    private String ingredientId;           // Primary Key. Corresponds to ndbno field in USDA database.
 
     @ColumnInfo(name = "name")
     private String name;                // Common name of an ingredient, from USDA database. (i.e. eggplant)
@@ -43,11 +45,11 @@ public class Ingredient {
     private double carbFactor;      // Usually 4
 
     // Boilerplate getters and setters.
-    public int getIngredientId() {
+    public String getIngredientId() {
         return ingredientId;
     }
 
-    public void setIngredientId(int ingredientId) {
+    public void setIngredientId(String ingredientId) {
         this.ingredientId = ingredientId;
     }
 

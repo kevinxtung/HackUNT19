@@ -2,6 +2,8 @@ package org.bodeen.recipebuilder.api.model;
 
 import com.google.gson.annotations.SerializedName;
 
+import java.util.List;
+
 public class FoodSearchList {
     @SerializedName("q")
     public String q;
@@ -20,5 +22,5 @@ public class FoodSearchList {
     @SerializedName("sort")
     public String sort;
     @SerializedName("item")
-    public java.util.List<FoodSearchItem> item = null;
+    public List<FoodSearchItem> item = null;
 }

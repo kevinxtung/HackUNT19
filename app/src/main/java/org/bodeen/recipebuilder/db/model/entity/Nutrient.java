@@ -1,5 +1,6 @@
 package org.bodeen.recipebuilder.db.model.entity;
 
+import androidx.annotation.NonNull;
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
@@ -9,7 +10,8 @@ public class Nutrient {
 
     @PrimaryKey
     @ColumnInfo(name = "nutrient_id")
-    private int nutrientId;         // Primary Key
+    @NonNull
+    private String nutrientId;         // Primary Key
 
     @ColumnInfo(name = "unit")
     private String unit;    // Unit of measure (mg, g, micrograms, etc)
@@ -21,11 +23,11 @@ public class Nutrient {
     private int round;      // Number of decimal places to round to
 
     // Boilerplate getters and setters.
-    public int getNutrientId() {
+    public String getNutrientId() {
         return nutrientId;
     }
 
-    public void setNutrientId(int nutrientId) {
+    public void setNutrientId(String nutrientId) {
         this.nutrientId = nutrientId;
     }
 

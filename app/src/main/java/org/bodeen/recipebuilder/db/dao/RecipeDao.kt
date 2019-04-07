@@ -6,7 +6,7 @@ import androidx.room.Insert
 import androidx.room.Query
 import org.bodeen.recipebuilder.db.model.IngredientAmount
 import org.bodeen.recipebuilder.db.model.NutrientAmount
-import org.bodeen.recipebuilder.db.model.entity.Recipe
+import org.bodeen.recipebuilder.db.model.entity.*
 
 @Dao
 interface RecipeDao {
@@ -30,4 +30,16 @@ interface RecipeDao {
 
     @Insert
     fun insert(recipe: Recipe)
+
+    @Insert
+    fun insert(ingredient: Ingredient)
+
+    @Insert
+    fun insert(nutrient: Nutrient)
+
+    @Insert
+    fun insert(recipeIngredient: RecipeIngredient)
+
+    @Insert
+    fun insert(ingredientNutrient: IngredientNutrient)
 }

@@ -1,5 +1,6 @@
 package org.bodeen.recipebuilder.db.model.entity;
 
+import androidx.annotation.NonNull;
 import androidx.room.*;
 import org.bodeen.recipebuilder.db.model.Amount;
 
@@ -26,10 +27,19 @@ public class RecipeIngredient {
     private int recipeId;
 
     @ColumnInfo(name = "ingredient_id")
-    private int ingredientId;
+    @NonNull
+    private String ingredientId;
 
     @Embedded
     private Amount amount;
+
+    public String getIngredientId() {
+        return ingredientId;
+    }
+
+    public void setIngredientId(String ingredientId) {
+        this.ingredientId = ingredientId;
+    }
 
     public int getId() {
         return id;
@@ -45,14 +55,6 @@ public class RecipeIngredient {
 
     public void setRecipeId(int recipeId) {
         this.recipeId = recipeId;
-    }
-
-    public int getIngredientId() {
-        return ingredientId;
-    }
-
-    public void setIngredientId(int ingredientId) {
-        this.ingredientId = ingredientId;
     }
 
     public Amount getAmount() {

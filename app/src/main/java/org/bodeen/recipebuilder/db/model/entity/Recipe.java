@@ -10,7 +10,7 @@ import java.util.List;
 @Entity(tableName = "recipe_table")
 public class Recipe {
 
-    @PrimaryKey
+    @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = "recipe_id")
     private int recipeId;           // Primary key.
 
