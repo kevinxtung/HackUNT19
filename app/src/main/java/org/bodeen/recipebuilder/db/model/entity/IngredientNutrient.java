@@ -1,9 +1,6 @@
 package org.bodeen.recipebuilder.db.model.entity;
 
-import androidx.room.ColumnInfo;
-import androidx.room.Entity;
-import androidx.room.ForeignKey;
-import androidx.room.PrimaryKey;
+import androidx.room.*;
 import org.bodeen.recipebuilder.db.model.Amount;
 
 @Entity(
@@ -20,7 +17,7 @@ import org.bodeen.recipebuilder.db.model.Amount;
                 )
         }, tableName = "ingredient_nutrient_table"
 )
-public class IngredientNutrition {
+public class IngredientNutrient {
 
     @PrimaryKey(autoGenerate = true)
     private int id;
@@ -31,6 +28,38 @@ public class IngredientNutrition {
     @ColumnInfo(name = "nutrient_id")
     private int nutritientId;
 
-    @ColumnInfo(name = "amount")
+    @Embedded
     private Amount amount;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public int getIngredientId() {
+        return ingredientId;
+    }
+
+    public void setIngredientId(int ingredientId) {
+        this.ingredientId = ingredientId;
+    }
+
+    public int getNutritientId() {
+        return nutritientId;
+    }
+
+    public void setNutritientId(int nutritientId) {
+        this.nutritientId = nutritientId;
+    }
+
+    public Amount getAmount() {
+        return amount;
+    }
+
+    public void setAmount(Amount amount) {
+        this.amount = amount;
+    }
 }

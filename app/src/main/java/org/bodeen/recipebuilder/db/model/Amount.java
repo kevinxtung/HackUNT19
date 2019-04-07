@@ -1,10 +1,25 @@
 package org.bodeen.recipebuilder.db.model;
 
+import androidx.room.ColumnInfo;
+
 public class Amount {
 
+    @ColumnInfo(name = "quantity")
     private double quantity;
-    private String unit;
+
+    @ColumnInfo(name = "measure_unit")
+    private String measureUnit;
+
+    @ColumnInfo(name = "gram_weight")
     private double gramWeight;
+
+    public String getMeasureUnit() {
+        return measureUnit;
+    }
+
+    public void setMeasureUnit(String measureUnit) {
+        this.measureUnit = measureUnit;
+    }
 
     public double getQuantity() {
         return quantity;
@@ -12,14 +27,6 @@ public class Amount {
 
     public void setQuantity(double quantity) {
         this.quantity = quantity;
-    }
-
-    public String getUnit() {
-        return unit;
-    }
-
-    public void setUnit(String unit) {
-        this.unit = unit;
     }
 
     public double getGramWeight() {

@@ -47,18 +47,12 @@ dependencies {
     api "org.jetbrains.kotlinx:kotlinx-coroutines-core:0.27.0-eap13"
     api "org.jetbrains.kotlinx:kotlinx-coroutines-android:0.27.0-eap13"
 
-    // Retrofit - Automatic JSON to POJO Library
+    // Retrofit
     implementation 'com.squareup.retrofit2:retrofit:2.1.0'
-    implementation 'com.google.code.gson:gson:2.6.2'
+    implementation 'com.google.code.gson:gson:2.8.5'
     implementation 'com.squareup.retrofit2:converter-gson:2.1.0'
 
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test:runner:1.1.0-alpha4'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.0-alpha4'
-}
-
-kotlin {
-    experimental {
-        coroutines "enable"
-    }
 }

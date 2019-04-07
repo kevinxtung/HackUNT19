@@ -4,12 +4,12 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
+import androidx.room.TypeConverters
 import org.bodeen.recipebuilder.db.dao.RecipeDao
-import org.bodeen.recipebuilder.db.model.entity.Ingredient
-import org.bodeen.recipebuilder.db.model.entity.Nutrient
-import org.bodeen.recipebuilder.db.model.entity.Recipe
+import org.bodeen.recipebuilder.db.model.entity.*
 
-@Database(entities = [Recipe::class, Ingredient::class, Nutrient::class], version = 1)
+@Database(entities = [Recipe::class, Ingredient::class, Nutrient::class, RecipeIngredient::class, IngredientNutrient::class], version = 1)
+@TypeConverters(Converters::class)
 abstract class RecipeDatabase : RoomDatabase() {
 
     abstract fun recipeDao(): RecipeDao
