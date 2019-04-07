@@ -28,7 +28,7 @@ class MainViewModel(app: Application) : AndroidViewModel(app) {
     }
 
     fun insert(recipe: Recipe) = scope.launch(Dispatchers.IO) {
-        recipeRepository.insert(recipe)
+        // recipeRepository.insert(recipe)
     }
 
     override fun onCleared() {

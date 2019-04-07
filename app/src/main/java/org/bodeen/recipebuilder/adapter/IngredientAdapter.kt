@@ -8,7 +8,7 @@ import kotlinx.android.synthetic.main.item_ingredient.view.*
 import org.bodeen.recipebuilder.R
 import org.bodeen.recipebuilder.db.model.IngredientAmount
 
-class IngredientAdapter(private var ingredients: ArrayList<IngredientAmount>) : RecyclerView.Adapter<IngredientAdapter.ViewHolder>() {
+class IngredientAdapter(var ingredients: ArrayList<IngredientAmount>) : RecyclerView.Adapter<IngredientAdapter.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val itemView = LayoutInflater.from(parent.context).inflate(R.layout.item_ingredient, parent, false)

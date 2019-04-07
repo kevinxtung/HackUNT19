@@ -1,5 +1,6 @@
 package org.bodeen.recipebuilder.activity
 
+import android.app.Activity
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
@@ -15,6 +16,9 @@ import org.bodeen.recipebuilder.adapter.SearchAdapter
 import org.bodeen.recipebuilder.api.ApiClient
 import org.bodeen.recipebuilder.api.USDAService
 import org.bodeen.recipebuilder.api.model.FoodSearchResult
+import org.bodeen.recipebuilder.db.RecipeDatabase
+import org.bodeen.recipebuilder.db.model.entity.Recipe
+import org.bodeen.recipebuilder.repo.RecipeRepository
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -22,15 +26,18 @@ import timber.log.Timber
 
 class CreateRecipeActivity : AppCompatActivity() {
 
+    private lateinit var service: USDAService
+    private lateinit var ingredientAdapter: IngredientAdapter
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_create_recipe)
 
-        val ingredientAdapter = IngredientAdapter(ArrayList())
+        ingredientAdapter = IngredientAdapter(ArrayList())
         ingredientList.layoutManager = LinearLayoutManager(this)
         ingredientList.adapter = ingredientAdapter
 
-        val service = ApiClient.getClient().create(USDAService::class.java)
+        service = ApiClient.getClient().create(USDAService::class.java)
 
         addIngredient.setOnClickListener {
             val view = View.inflate(this, R.layout.dialog_ingredient_search, null)
@@ -78,6 +85,15 @@ class CreateRecipeActivity : AppCompatActivity() {
     }
 
     private fun saveRecipeToDB() {
+        val recipeDao = RecipeDatabase.getDatabase(application).recipeDao()
+        val recipeRepository = RecipeRepository(recipeDao)
 
+        val recipe = Recipe()
+        recipe.name = nameInput.text.toString()
+        recipe.description = descInput.text.toString()
+
+        recipeRepository.insert(recipe, ingredientAdapter.ingredients, service)
+        setResult(Activity.RESULT_OK)
+        finish()
     }
 }
