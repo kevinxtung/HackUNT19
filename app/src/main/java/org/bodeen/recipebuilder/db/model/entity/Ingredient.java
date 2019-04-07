@@ -4,11 +4,24 @@ import androidx.annotation.NonNull;
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
+import org.bodeen.recipebuilder.api.model.foodreport.FRNutrient;
+import org.bodeen.recipebuilder.api.model.foodreport.FoodReportJSONObject;
 
 import java.util.List;
 
 @Entity(tableName = "ingredient_table")
 public class Ingredient {
+
+    public Ingredient(FoodReportJSONObject object) {
+        ingredientId = object.getFoodHolders().get(0).getFood().getDesc().getNdbno();
+        name = object.getFoodHolders().get(0).getFood().getDesc().getName();
+        List<FRNutrient> nutrients = object.getFoodHolders().get(0).getFood().getFRNutrients();
+        for (int i = 0; i < nutrients.size(); i++) {
+            if (nutrients.get(i).getNutrientId() == 208) {
+                hundredFactor = nutrients.get(i).getValue();
+            }
+        }
+    }
 
     @PrimaryKey
     @ColumnInfo(name = "ingredient_id")

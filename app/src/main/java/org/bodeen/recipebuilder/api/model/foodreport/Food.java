@@ -15,9 +15,9 @@ public class Food {
     @SerializedName("desc")
 
     private Desc desc;
-    @SerializedName("nutrients")
+    @SerializedName("FRNutrients")
 
-    private List<Nutrient> nutrients = null;
+    private List<FRNutrient> FRNutrients = null;
     @SerializedName("sources")
 
     private List<Source> sources = null;
@@ -52,12 +52,12 @@ public class Food {
         this.desc = desc;
     }
 
-    public List<Nutrient> getNutrients() {
-        return nutrients;
+    public List<FRNutrient> getFRNutrients() {
+        return FRNutrients;
     }
 
-    public void setNutrients(List<Nutrient> nutrients) {
-        this.nutrients = nutrients;
+    public void setFRNutrients(List<FRNutrient> FRNutrients) {
+        this.FRNutrients = FRNutrients;
     }
 
     public List<Source> getSources() {

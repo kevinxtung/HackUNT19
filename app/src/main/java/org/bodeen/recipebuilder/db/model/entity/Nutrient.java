@@ -17,7 +17,7 @@ public class Nutrient {
     private String unit;    // Unit of measure (mg, g, micrograms, etc)
 
     @ColumnInfo(name = "name")
-    private String name;    // Common Name of Nutrient
+    private String name;    // Common Name of FRNutrient
 
     @ColumnInfo(name = "round")
     private int round;      // Number of decimal places to round to
