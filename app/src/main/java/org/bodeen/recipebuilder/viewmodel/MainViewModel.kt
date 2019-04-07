@@ -18,17 +18,17 @@ class MainViewModel(app: RecipeApp) : AndroidViewModel(app) {
 
     private val scope = CoroutineScope(coroutineContext)
 
-    private val repository: RecipeRepository
+    private val recipeRepository: RecipeRepository
     val allRecipes: LiveData<List<Recipe>>
 
     init {
         val recipeDao = RecipeDatabase.getDatabase(app).recipeDao()
-        repository = RecipeRepository(recipeDao)
-        allRecipes = repository.allRecipes
+        recipeRepository = RecipeRepository(recipeDao)
+        allRecipes = recipeRepository.allRecipes
     }
 
     fun insert(recipe: Recipe) = scope.launch(Dispatchers.IO) {
-        repository.insert(recipe)
+        recipeRepository.insert(recipe)
     }
 
     override fun onCleared() {
